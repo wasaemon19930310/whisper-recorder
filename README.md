@@ -5,7 +5,7 @@ docker build -t whisper-recorder .
 docker build --no-cache -t whisper-transcriber .
 ```
 ## 2. Dockerコンテナを実行
-docker run --rm --device /dev/snd -v $(pwd):/app whisper-recorder
+<!-- docker run --rm --device /dev/snd -v $(pwd):/app whisper-recorder -->
 ## 3. Whisperのキャッシュを有効化
 ```
 ls -ld ~/.cache/whisper
@@ -44,9 +44,11 @@ deactivate
 ```
 # 録音実行コマンド
 ```
+python record_audio.py output.wav
 python record_audio.py output.wav --mic_device "Jabra Evolve2 40" --speaker_device "BlackHole 2ch"
 ```
 # 文字起こし実行コマンド
 ```
 docker run --rm -v $(pwd):/app -v ~/.cache/whisper:/root/.cache/whisper -w /app whisper-transcriber python transcribe.py output.wav
+docker run --rm -v $(pwd):/app -v ~/.cache/whisper:/root/.cache/whisper -w /app whisper-recorder python transcribe.py output.wav
 ```
