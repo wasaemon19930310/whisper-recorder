@@ -3,7 +3,8 @@ import sys
 
 def transcribe_audio(filename):
     print("文字起こしを開始します...")
-    model = whisper.load_model("medium")  # 必要に応じて'medium'や'large'に変更
+    # 必要に応じて'medium'や'large'に変更
+    model = whisper.load_model("medium")
     result = model.transcribe(filename)
     print("\nTranscription:\n")
     print(result["text"])
