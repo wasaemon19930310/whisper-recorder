@@ -11,13 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Zscaler証明書をシステムに追加
-COPY ./zscaler.ca.crt /usr/local/share/ca-certificates/zscaler.ca.crt
-RUN chmod 644 /usr/local/share/ca-certificates/zscaler.ca.crt && update-ca-certificates
-
-# 証明書パスを指定
-ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-
 # pipのアップグレードと依存関係のインストール（タイムアウト対策込み）
 RUN pip install --timeout=120 --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip --upgrade
 
