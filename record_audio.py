@@ -103,7 +103,7 @@ def record_mixed_audio(output_file, mic_device, speaker_device):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="マイクとスピーカーを同時録音し、1つのファイルに保存します。")
     parser.add_argument("output_file", help="保存するファイル名 (例: output.wav)")
-    parser.add_argument("--mic_device", type=str, default="MacBook Airのマイク", help="マイクデバイス名")
+    parser.add_argument("--mic_device", type=str, default="MacBook Air Microphone", help="マイクデバイス名")
     parser.add_argument("--speaker_device", type=str, default="BlackHole 2ch", help="スピーカーデバイス名")
     args = parser.parse_args()
 
