@@ -1,6 +1,6 @@
 # Whisper Dual-Channel Recorder & Transcriber
 
-Web会議やオンライン講義を、「自分の声」と「相手の声（PC音）」に分けて録音し、OpenAI Whisperで高精度に文字起こしするためのツールです。
+Web会議やオンライン講義を「自分の声」と「相手の声（PC音）」に分けて録音し、OpenAI Whisperで高精度に文字起こしするためのツールです。
 
 ## 特徴
 
